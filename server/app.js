@@ -19,6 +19,7 @@ app.use(bodyparser({
 app.use(json())
 app.use(logger())
 app.use(require('koa-static')(__dirname + '/client/dist/'))
+app.use(require('koa-static')(__dirname + '/client/other_collections/animation_cv/es6/build/'))
 
 app.use(views(__dirname + '/client', {
   extension: 'html'
