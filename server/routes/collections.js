@@ -10,7 +10,7 @@ router.get('/animation_cv', async (ctx, next) => {
   await ctx.render('other_collections/animation_cv/index')
 })
 router.get('/buddha_particle', async (ctx, next) => {
-  await ctx.render('other_collections/canvas_particle_animator/index')
+  await ctx.render('other_collections/canvas_particle_animator_new/index')
 })
 
 module.exports = router
