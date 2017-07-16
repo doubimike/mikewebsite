@@ -11,6 +11,7 @@
     <ul>
       <li><a href="http://www.doubimike.qdgls.cn/collections/animation_cv" target="_blank">我的酷炫简历</a></li>
       <li><a href="http://www.doubimike.qdgls.cn/collections/brick_game" target="_blank">Canvas砖块游戏</a></li>
+      <li><a href="http://www.doubimike.qdgls.cn/collections/buddha_particle" target="_blank">佛粒子</a></li>
     </ul>
     <h2>我的外包</h2>
     <ul>

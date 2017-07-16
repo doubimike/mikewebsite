@@ -9,5 +9,8 @@ router.get('/brick_game', async (ctx, next) => {
 router.get('/animation_cv', async (ctx, next) => {
   await ctx.render('other_collections/animation_cv/index')
 })
+router.get('/buddha_particle', async (ctx, next) => {
+  await ctx.render('other_collections/canvas_particle_animator/index')
+})
 
 module.exports = router
