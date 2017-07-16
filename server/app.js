@@ -20,7 +20,7 @@ app.use(json())
 app.use(logger())
 app.use(require('koa-static')(__dirname + '/client/dist/'))
 app.use(require('koa-static')(__dirname + '/client/other_collections/animation_cv/es6/build/'))
-app.use(require('koa-static')(__dirname + '/client/other_collections/canvas_particle_animator/'))
+app.use(require('koa-static')(__dirname + '/client/other_collections/canvas_particle_animator_new/'))
 
 app.use(views(__dirname + '/client', {
   extension: 'html'
