@@ -30,15 +30,19 @@
 	<audio id="audio" src="/下定决心去做就行吖.m4a" ></audio>
 	<script type="text/javascript" src="https://cdn.jsdelivr.net/bluebird/latest/bluebird.js"></script>
 	<script>
+		var count = 0
 		document.getElementById('img').onload = function () {
-			document.getElementById('audio').play()
-			setTimeoutChangeImg('/2.png',3000).then(function () {
-				return setTimeoutChangeImg('/3.png',3050)
-			}).then(function () {
-				return setTimeoutChangeImg('/4.png',4000)
-			}).then(function () {
-				return setTimeoutChangeImg('/5.png',3500)
-			})	
+			if (count==0) {
+				document.getElementById('audio').play()
+				setTimeoutChangeImg('/2.png',3000).then(function () {
+					return setTimeoutChangeImg('/3.png',3050)
+				}).then(function () {
+					return setTimeoutChangeImg('/4.png',4000)
+				}).then(function () {
+					return setTimeoutChangeImg('/5.png',3500)
+				})		
+			}else {
+			}
 		}
 		function changeImg(src,cb) {
 			document.getElementById('img').setAttribute('src',src)	
