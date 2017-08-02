@@ -3,6 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>make a movie by javascript</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
 	<style>
 		html,body {
 			height: 100%;
@@ -18,11 +19,33 @@
 		* {
 			transition: all 0.3s;
 		}
+
+		button {
+			 	display: block;
+				position: fixed;
+				top:10px;
+				right: 10px;
+				width: 50px;
+				height: 50px;
+				background: #fff;
+				border-radius: 50%;
+				font-size: 10px;			}
+
+		@media (min-width: 800px) {
+			 button {
+				display: none;
+			}
+		}
 	</style>
 </head>
 <body>
 	<img id="img" src="/1.png">
-	<audio id="audio" src="/下定决心去做就行吖.m4a" ></audio>
+	<button id="button">播放</button>
+	<audio id="audio" >
+		<source src="/下定决心去做就行吖.ogg" type="audio/ogg">
+		<source src="/下定决心去做就行吖.m4a" type="audio/mpeg">
+		<source src="/下定决心去做就行吖.mp3" type="audio/mpeg">
+	</audio>
 	<img src="/2.png" style="display: none">
 	<img src="/3.png" style="display: none">
 	<img src="/4.png" style="display: none">
@@ -34,13 +57,25 @@
 		var count = 0
 		var audioFlag = 0
 		var imgFlag = 0
-		document.getElementById('audio').oncanplaythrough = function () {
+		// document.getElementById('audio').oncanplaythrough = function () {
+		// 	console.log('audio onload')
+		// 	audioFlag = 1
+		// 	if (imgFlag) {
+		// 		play()
+				
+		// 	}
+		// }
+		document.getElementById('audio').oncanplay = function () {
 			console.log('audio onload')
 			audioFlag = 1
 			if (imgFlag) {
 				play()
 				
 			}
+		}
+
+		document.getElementById('button').onclick = function () {
+			play()
 		}
 		document.getElementById('img').onload = function () {
 			console.log('onload')
@@ -55,6 +90,7 @@
 		}
 
 		function play() {
+			console.log('play')
 			document.getElementById('audio').play()
 				setTimeoutChangeImg('/2.png',3000).then(function () {
 					return setTimeoutChangeImg('/3.png',3200)
