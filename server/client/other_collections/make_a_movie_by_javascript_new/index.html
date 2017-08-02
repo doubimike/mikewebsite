@@ -38,37 +38,32 @@
 			console.log('audio onload')
 			audioFlag = 1
 			if (imgFlag) {
-				document.getElementById('audio').play()
-				setTimeoutChangeImg('/2.png',3000).then(function () {
-					return setTimeoutChangeImg('/3.png',3050)
-				}).then(function () {
-					return setTimeoutChangeImg('/4.png',4000)
-				}).then(function () {
-					return setTimeoutChangeImg('/5.png',3500)
-				})	
-				count++	
+				play()
+				
 			}
 		}
 		document.getElementById('img').onload = function () {
 			console.log('onload')
-			audioFlag = 1
+			imgFlag = 1
 			if (count==0 && audioFlag) {
-				console.log('count==0')
-				document.getElementById('audio').play()
-				setTimeoutChangeImg('/2.png',3000).then(function () {
-					return setTimeoutChangeImg('/3.png',3050)
-				}).then(function () {
-					return setTimeoutChangeImg('/4.png',4000)
-				}).then(function () {
-					return setTimeoutChangeImg('/5.png',3500)
-				})	
-				count++	
-			}else {
+				play()
 			}
 		}
 		function changeImg(src,cb) {
 			document.getElementById('img').setAttribute('src',src)	
 			cb&&cb()
+		}
+
+		function play() {
+			document.getElementById('audio').play()
+				setTimeoutChangeImg('/2.png',3000).then(function () {
+					return setTimeoutChangeImg('/3.png',3200)
+				}).then(function () {
+					return setTimeoutChangeImg('/4.png',4000)
+				}).then(function () {
+					return setTimeoutChangeImg('/5.png',3500)
+				})	
+				count++	
 		}
 		
 		// function init() {
