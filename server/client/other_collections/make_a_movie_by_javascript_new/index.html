@@ -57,6 +57,7 @@
 		var count = 0
 		var audioFlag = 0
 		var imgFlag = 0
+		var playFlag = 0
 		// document.getElementById('audio').oncanplaythrough = function () {
 		// 	console.log('audio onload')
 		// 	audioFlag = 1
@@ -69,13 +70,33 @@
 			console.log('audio onload')
 			audioFlag = 1
 			if (imgFlag) {
+				console.log('audio onload play')
 				play()
 				
 			}
 		}
-
+		var id
 		document.getElementById('button').onclick = function () {
+			console.log('imgFlag',imgFlag)
+			console.log('audioFlag',audioFlag)
+
+			// else {
+			// 	alert('请等待加载完毕')
+			// }
+
+			function detect() {
+				 
+				if (imgFlag&&audioFlag) {
+					clearInterval(id)
+					play()	
+				}	
+				else {
+					 id = setInterval(detect,50)
+				}
+			}
+
 			play()
+			
 		}
 		document.getElementById('img').onload = function () {
 			console.log('onload')
@@ -91,7 +112,10 @@
 
 		function play() {
 			console.log('play')
+
 			document.getElementById('audio').play()
+			document.getElementById('button').style.display = 'none'
+			playFlag = 1
 				setTimeoutChangeImg('/2.png',3000).then(function () {
 					return setTimeoutChangeImg('/3.png',3200)
 				}).then(function () {
