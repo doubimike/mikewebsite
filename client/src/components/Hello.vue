@@ -10,6 +10,7 @@
       <li><a href="http://doubimike.github.io/" target="_blank" title="我的在线简历 -设计理念：分别代表脑袋、身体、脚的页面，意指人的思想、作品、经历，整站代表一个形象的人 -开发技术：RequireJS，SASS，CSS3，jQuery及各种插件...">出道青涩简历</a></li>
       <!-- 我的在线简历 -设计理念：分别代表脑袋、身体、脚的页面，意指人的思想、作品、经历，整站代表一个形象的人 -开发技术：RequireJS，SASS，CSS3，jQuery及各种插件... -->
       <li><a href="http://www.doubimike.qdgls.cn/collections/make_a_movie_by_javascript" target="_blank">用JS制作电影</a></li>
+      <li><a href="http://www.qdgls.cn:9999/subscribe" target="_blank">码市最新项目订阅</a></li>
       <li><a href="https://tconsole.yeamoney.cn" target="_blank">某金融控制台</a></li>
       <li><a href="http://119.23.130.150" target="_blank">某金融交易中心管理平台</a></li>
     </ul>
