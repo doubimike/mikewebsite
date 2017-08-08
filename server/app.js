@@ -9,6 +9,8 @@ const logger = require('koa-logger')
 
 const index = require('./routes/index')
 const collections = require('./routes/collections')
+var path = require('path')
+var staticCache = require('koa-static-cache')
 
 // error handler
 onerror(app)
@@ -26,6 +28,10 @@ app.use(compress({
     threshold: 2048,
     flush: require('zlib').Z_SYNC_FLUSH
 }))
+app.use(staticCache(path.join(__dirname, '/client/dist/'), {
+    maxAge: 365 * 24 * 60 * 60
+}))
+
 
 app.use(require('koa-static')(__dirname + '/client/dist/'))
 app.use(require('koa-static')(__dirname + '/client/other_collections/animation_cv/es6/build/'))
